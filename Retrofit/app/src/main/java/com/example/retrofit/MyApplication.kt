@@ -1,6 +1,7 @@
 package com.example.retrofit
 
 import android.app.Application
+import com.example.kotlincoroutines1.UserDao
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -12,6 +13,8 @@ class MyApplication: Application() {
 
     companion object {
         lateinit var userService: UserService
+        //we will need to initialize the AppDatabase object
+        lateinit var userDao: UserDao
     }
 
     override fun onCreate() {

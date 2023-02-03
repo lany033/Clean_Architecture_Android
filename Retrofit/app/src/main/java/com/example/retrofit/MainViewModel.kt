@@ -27,6 +27,6 @@ class MainViewModel(private val userService: UserService): ViewModel() {
 // MainViewModelFactory will be responsible for injecting
 // the UserService class into the MainViewModel class
 class MainViewModelFactory: ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T
-    = MainViewModel(MyApplication.userService) as T
+    override fun <T : ViewModel> create(modelClass: Class<T>): T =
+        MainViewModel(MyApplication.userService) as T
 }
