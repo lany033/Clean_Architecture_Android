@@ -1,7 +1,8 @@
 package com.example.retrofit
 
 import android.app.Application
-import com.example.kotlincoroutines1.UserDao
+import androidx.room.Room
+
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -31,5 +32,12 @@ class MyApplication: Application() {
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
         userService = retrofit.create(UserService::class.java)
+
+        //we will need to initialize the AppDatabase object
+        val db = Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java,"my-database"
+        ).build()
+        userDao = db.userDao()
     }
 }
