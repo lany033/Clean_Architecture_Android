@@ -15,7 +15,8 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.kotlincoroutines1.ui.theme.Exercise0203Theme
 
-
+//5. Modify the MainActivity class to use a list of UserEntity objects instead of
+//User objects
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,13 +33,19 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Screen(viewModel: MainViewModel = viewModel
     (factory = MainViewModelFactory())){
-    UserList(users = viewModel.resultState)
+    UserList(uiState = viewModel.resultState)
 }
 
 @Composable
-fun UserList(users: List<User>) {
+//Here, we just change the dependency to now rely on the UserEntity class.
+fun UserList(uiState: UiState) {
     LazyColumn(modifier = Modifier.padding(16.dp)) {
-        items(users) {
+        item(uiState.count) {
+            Column(modifier = Modifier.padding(16.dp)) {
+                Text(text = uiState.count)
+            }
+        }
+        items(uiState.userList) {
             Column(modifier = Modifier.padding(16.dp)) {
                 Text(text = it.name)
                 Text(text = it.username)
