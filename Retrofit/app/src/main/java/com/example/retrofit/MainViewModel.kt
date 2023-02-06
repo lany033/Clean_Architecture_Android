@@ -19,11 +19,11 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(
     private val userService: UserService,
-    private val userDao: UserDao
+    private val userDao: UserDao,
+    private val appDataStore: AppDataStore
     ): ViewModel() {
 
-    var resultState by mutableStateOf<List<UserEntity>>(emptyList())
-
+    var resultState by mutableStateOf(UiState())
     private set
 
     init {
@@ -33,8 +33,11 @@ class MainViewModel(
                     val userEntities =
                         it.map { user -> UserEntity (user.id, user.name, user.username, user.email)}
                     userDao.insertUsers(userEntities)
+                    appDataStore.incrementCount()
                 }.flatMapConcat { userDao.getUsers() }
                 .catch { emitAll(userDao.getUsers()) }
+                .flatMapConcat { users -> appDataStore.savedCount.map {
+                    count -> UiState(users, count.toString()) } }
                 .flowOn(Dispatchers.IO)
                 .collect{
                     resultState = it
@@ -47,5 +50,8 @@ class MainViewModel(
 // the UserService class into the MainViewModel class
 class MainViewModelFactory: ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T =
-        MainViewModel(MyApplication.userService, MyApplication.userDao) as T
+        MainViewModel(
+            MyApplication.userService,
+            MyApplication.userDao,
+            MyApplication.appDataStore) as T
 }

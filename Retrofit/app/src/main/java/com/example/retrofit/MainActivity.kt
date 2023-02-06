@@ -33,14 +33,19 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Screen(viewModel: MainViewModel = viewModel
     (factory = MainViewModelFactory())){
-    UserList(users = viewModel.resultState)
+    UserList(uiState = viewModel.resultState)
 }
 
 @Composable
 //Here, we just change the dependency to now rely on the UserEntity class.
-fun UserList(users: List<UserEntity>) {
+fun UserList(uiState: UiState) {
     LazyColumn(modifier = Modifier.padding(16.dp)) {
-        items(users) {
+        item(uiState.count) {
+            Column(modifier = Modifier.padding(16.dp)) {
+                Text(text = uiState.count)
+            }
+        }
+        items(uiState.userList) {
             Column(modifier = Modifier.padding(16.dp)) {
                 Text(text = it.name)
                 Text(text = it.username)
