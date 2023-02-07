@@ -10,6 +10,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -33,7 +34,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Screen(viewModel: MainViewModel = viewModel
     (factory = MainViewModelFactory())){
-    UserList(uiState = viewModel.resultState)
+    viewModel.uiStateLiveData.observeAsState().value?.let { 
+        UserList(uiState = it)
+    }
 }
 
 @Composable

@@ -13,7 +13,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
-
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "my_preferences")
 
 class MyApplication: Application() {
@@ -24,6 +23,10 @@ class MyApplication: Application() {
         lateinit var userDao: UserDao
 
         lateinit var appDataStore: AppDataStore
+
+        //create the instance of the MainTextFormatter class in the
+        //MyApplication class:
+        lateinit var mainTextFormatter: MainTextFormatter
     }
 
     override fun onCreate() {
@@ -49,5 +52,7 @@ class MyApplication: Application() {
         userDao = db.userDao()
 
         appDataStore = AppDataStore(dataStore)
+
+        mainTextFormatter = MainTextFormatter(this)
     }
 }

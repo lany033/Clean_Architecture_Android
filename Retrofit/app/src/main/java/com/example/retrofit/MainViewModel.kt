@@ -3,6 +3,8 @@ package com.example.retrofit
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
@@ -20,11 +22,17 @@ import kotlinx.coroutines.launch
 class MainViewModel(
     private val userService: UserService,
     private val userDao: UserDao,
-    private val appDataStore: AppDataStore
+    private val appDataStore: AppDataStore,
+    //Inject MainTextFormatter in MainViewModel and use the formatted text as a
+    //value for the UiState.count
+    private val mainTextFormatter: MainTextFormatter
     ): ViewModel() {
 
-    var resultState by mutableStateOf(UiState())
-    private set
+    private val _uiStateLiveData = MutableLiveData(UiState()) //update the value
+    val uiStateLiveData: LiveData<UiState> = _uiStateLiveData //be the observer
+
+    //var resultState by mutableStateOf(UiState())
+    //private set
 
     init {
         viewModelScope.launch {
@@ -37,10 +45,11 @@ class MainViewModel(
                 }.flatMapConcat { userDao.getUsers() }
                 .catch { emitAll(userDao.getUsers()) }
                 .flatMapConcat { users -> appDataStore.savedCount.map {
-                    count -> UiState(users, count.toString()) } }
+                    count -> UiState(users,
+                                    mainTextFormatter.getCounterText(count)) } }
                 .flowOn(Dispatchers.IO)
                 .collect{
-                    resultState = it
+                    _uiStateLiveData.value = it //update the value of liveData
                 }
         }
     }
@@ -53,5 +62,6 @@ class MainViewModelFactory: ViewModelProvider.Factory {
         MainViewModel(
             MyApplication.userService,
             MyApplication.userDao,
-            MyApplication.appDataStore) as T
+            MyApplication.appDataStore,
+            MyApplication.mainTextFormatter) as T
 }
