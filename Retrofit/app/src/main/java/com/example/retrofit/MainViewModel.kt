@@ -8,18 +8,21 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 // MainViewModel class will depend on the UserService class
 // to get a list of users and store them in a Compose state
 // that will be used in the UI.
-/********************************************************************************/
+
 //4. Modify the MainViewModel class to fetch users from the UserService class
 //and then insert them into the UserDao class.
 
-class MainViewModel(
+@HiltViewModel
+class MainViewModel @Inject constructor(
     private val userService: UserService,
     private val userDao: UserDao,
     private val appDataStore: AppDataStore,
@@ -57,6 +60,7 @@ class MainViewModel(
 
 // MainViewModelFactory will be responsible for injecting
 // the UserService class into the MainViewModel class
+/*
 class MainViewModelFactory: ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T =
         MainViewModel(
@@ -64,4 +68,4 @@ class MainViewModelFactory: ViewModelProvider.Factory {
             MyApplication.userDao,
             MyApplication.appDataStore,
             MyApplication.mainTextFormatter) as T
-}
+}*/

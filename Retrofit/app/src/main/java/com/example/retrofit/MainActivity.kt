@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
@@ -23,9 +24,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.kotlincoroutines1.ui.theme.Exercise0203Theme
+import dagger.hilt.android.AndroidEntryPoint
 
 //5. Modify the MainActivity class to use a list of UserEntity objects instead of
 //User objects
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +47,7 @@ class MainActivity : ComponentActivity() {
 fun App(navController: NavHostController) {
     NavHost(navController, startDestination = AppNavigation.Users.route) {
         composable(route = AppNavigation.Users.route) {
-            Users(navController)
+            Users(navController, hiltViewModel())
         }
         composable(
             route = AppNavigation.User.route,
@@ -60,7 +63,7 @@ fun App(navController: NavHostController) {
 @Composable
 fun Users(
     navController: NavController,
-    viewModel: MainViewModel = viewModel(factory = MainViewModelFactory())
+    viewModel: MainViewModel
 ) {
     viewModel.uiStateLiveData.observeAsState().value?.let {
         UserList(uiState = it, navController)
