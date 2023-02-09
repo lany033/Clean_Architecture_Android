@@ -1,5 +1,8 @@
 plugins {
+    id 'dagger.hilt.android.plugin'
+    //id 'com.google.dagger.hilt.android' version '2.44' apply false
     id 'com.android.application'
+    id 'kotlin-android'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
 }
@@ -73,4 +76,10 @@ dependencies {
     kapt "androidx.room:room-compiler:2.5.0"
     implementation "androidx.datastore:datastore-preferences:1.0.0"
     implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
+    implementation "androidx.navigation:navigation-compose:2.6.0-alpha04"
+
+    implementation 'com.google.dagger:hilt-android:2.44'
+    kapt 'com.google.dagger:hilt-android-compiler:2.44'
+    implementation "androidx.hilt:hilt-common:1.0.0"
+    implementation 'androidx.hilt:hilt-navigation-compose:1.1.0-alpha01'
 }

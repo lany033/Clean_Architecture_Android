@@ -1,22 +1,25 @@
 package com.example.retrofit
 
 import android.app.Application
-import android.content.Context
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.preferencesDataStore
-import androidx.room.Room
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import okhttp3.OkHttpClient
-import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
-import java.util.concurrent.TimeUnit
+//import android.content.Context
+//import androidx.datastore.core.DataStore
+//import androidx.datastore.preferences.core.Preferences
+//import androidx.datastore.preferences.preferencesDataStore
+//import androidx.room.Room
+//import com.squareup.moshi.Moshi
+//import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import dagger.hilt.android.HiltAndroidApp
+//import okhttp3.OkHttpClient
+//import retrofit2.Retrofit
+//import retrofit2.converter.moshi.MoshiConverterFactory
+//import java.util.concurrent.TimeUnit
 
+//val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "my_preferences")
 
-val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "my_preferences")
-
-class MyApplication: Application() {
+@HiltAndroidApp
+class MyApplication: Application()
+/*
+{
 
     companion object {
         lateinit var userService: UserService
@@ -24,6 +27,10 @@ class MyApplication: Application() {
         lateinit var userDao: UserDao
 
         lateinit var appDataStore: AppDataStore
+
+        //create the instance of the MainTextFormatter class in the
+        //MyApplication class:
+        lateinit var mainTextFormatter: MainTextFormatter
     }
 
     override fun onCreate() {
@@ -49,5 +56,8 @@ class MyApplication: Application() {
         userDao = db.userDao()
 
         appDataStore = AppDataStore(dataStore)
+
+        mainTextFormatter = MainTextFormatter(this)
     }
 }
+*/
