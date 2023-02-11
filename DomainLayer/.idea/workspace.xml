@@ -5,19 +5,65 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c022735e-4c20-4afa-b905-1fa32400b413" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Retrofit/app/src/main/java/com/example/retrofit/NetworkModule.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Retrofit/app/src/main/java/com/example/retrofit/PersistencesModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/androidTest/java/com/example/domain/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/java/com/example/domain/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/java/com/example/domain/entity/Interaction.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/java/com/example/domain/entity/Post.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/java/com/example/domain/entity/PostWithUser.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/java/com/example/domain/entity/Result.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/java/com/example/domain/entity/UseCaseException.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/java/com/example/domain/entity/User.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/java/com/example/domain/repository/InteractionRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/java/com/example/domain/repository/PostRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/java/com/example/domain/repository/UserRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/java/com/example/domain/usecase/GetPostUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/java/com/example/domain/usecase/GetPostsWithInteractionUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/java/com/example/domain/usecase/GetUserUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/java/com/example/domain/usecase/UpdateInteractionUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/java/com/example/domain/usecase/UseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/src/test/java/com/example/domain/ExampleUnitTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Retrofit/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Retrofit/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Retrofit/app/src/main/java/com/example/retrofit/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Retrofit/app/src/main/java/com/example/retrofit/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Retrofit/app/src/main/java/com/example/retrofit/MainTextFormatter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Retrofit/app/src/main/java/com/example/retrofit/MainTextFormatter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Retrofit/app/src/main/java/com/example/retrofit/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Retrofit/app/src/main/java/com/example/retrofit/MainViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Retrofit/app/src/main/java/com/example/retrofit/MyApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Retrofit/app/src/main/java/com/example/retrofit/MyApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Retrofit/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Retrofit/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +76,16 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin Sealed Class" />
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -37,7 +93,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2LVxmJmXcIOX3Ia4znviowEyaEu" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,11 +107,76 @@
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.example.domain.entity" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.app.domain">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="DomainLayer.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+        <option name="PROFILING_MODE" value="NOT_SET" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app.domain" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="DomainLayer.app.domain.main" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -122,5 +245,16 @@
       <updated>1675970213816</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
